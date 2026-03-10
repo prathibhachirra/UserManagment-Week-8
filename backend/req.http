@@ -1,0 +1,24 @@
+###
+
+POST  http://localhost:2000/user-api/users 
+Content-Type: application/json
+
+{
+    "name":"ishu",
+    "email":"prathibha@123",
+    "dateofBirth":"2005-12-23",
+    "status":"true"
+}
+
+###
+GET http://localhost:2000/user-api/users
+
+###
+
+GET  http://localhost:2000/user-api/users/69a697a2075aa2c6bcfe6c5c
+
+###
+DELETE http://localhost:2000/user-api/users/69a697a2075aa2c6bcfe6c5c
+
+###
+PATCH http://localhost:2000/user-api/users/69a697a2075aa2c6bcfe6c5c
