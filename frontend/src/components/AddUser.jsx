@@ -14,7 +14,7 @@ function AddUser() {
       setLoading(true);
       // console.log(obj)
 try {
-      let res = await fetch("https://usermanagment-week-8.onrender.com", {
+      let res = await fetch("http://localhost:2000/user-api/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
