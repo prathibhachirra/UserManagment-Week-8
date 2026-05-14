@@ -17,11 +17,7 @@ app.use(exp.json())
 
 
 
-app.use(cors({
-  origin: ["https://usermanagment-week-8.vercel.app"],
-  credentials: true
-}))
-
+app.use(cors())
 // routes
 // app.use("/product-api", ProductRoute)
 app.use("/user-api", UserApp)
