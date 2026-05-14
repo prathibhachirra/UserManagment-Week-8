@@ -8,13 +8,15 @@ function Userlist() {
 let [users,setUsers]=useState([]);
 let navigate=useNavigate()
 
+const API_URL = import.meta.env.VITE_API_URL
+
 useEffect(()=>{
 
 async function getUsers(){
 
 try{
 
-let res=await fetch("http://localhost:2000/user-api/users",{
+let res=await fetch(`${API_URL}/user-api/users`,{
 method:"GET",
 });
 

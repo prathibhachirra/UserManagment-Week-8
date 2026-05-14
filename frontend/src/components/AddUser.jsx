@@ -16,6 +16,8 @@ function AddUser() {
 
   let navigate = useNavigate()
 
+  const API_URL = import.meta.env.VITE_API_URL
+
   // form submit
   const submitform = async(obj) => {
 
@@ -23,7 +25,7 @@ function AddUser() {
 
     try {
 
-      let res = await fetch("http://localhost:2000/user-api/users", {
+      let res = await fetch(`${API_URL}/user-api/users`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
