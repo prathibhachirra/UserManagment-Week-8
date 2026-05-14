@@ -43,9 +43,9 @@ UserApp.delete("/users/:id",async(req,res)=>{
     let user=await UserModel.findByIdAndUpdate(uid,{$set:{status:false}},{returnDocument:"after"})
     if(!user)
     {
-        res.status(404).json({message:' user not found '})
+        res.status(200).json({message:' user not found '})
     }
-    res.status(404).json({message:"updated",payload:user})
+    res.status(200).json({message:"updated",payload:user})
 })
 
 
@@ -53,7 +53,7 @@ UserApp.delete("/users/:id",async(req,res)=>{
 UserApp.patch("/users/:id",async(req,res)=>{
     let uid=req.params.id;
     let user=await UserModel.findByIdAndUpdate(uid,{$set:{status:true}})
-    res.status(404).json({message:"user activated",payload:user})
+    res.status(200).json({message:"user activated",payload:user})
 
 })  
 
