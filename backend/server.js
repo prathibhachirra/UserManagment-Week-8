@@ -16,8 +16,10 @@ const port = process.env.port || 2000
 app.use(exp.json())
 
 
+
 app.use(cors({
-origin:["http://localhost:5173"]
+  origin: ["https://usermanagment-week-8.vercel.app"],
+  credentials: true
 }))
 
 // routes
