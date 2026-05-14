@@ -3,12 +3,14 @@ import exp from 'express';
 import {UserApp} from './API/UserApi.js'
 import { connect } from 'mongoose'
 import cors from 'cors'
+import dotenv from 'dotenv'
+dotenv.config()
 
 // import {config} from 'dotenv'
 // config();
 
 const app = exp()
-const port = 2000
+const port = process.env.port || 2000
 
 // middleware
 app.use(exp.json())
@@ -25,7 +27,7 @@ app.use("/user-api", UserApp)
 // connect to mongo db 
 async function connectDB() {
     try {
-        await connect("mongodb://localhost:27017/user-management")
+        await connect(process.env.MONGO_URL)
         console.log("database is connected successfully")
 
         app.listen(port, () =>
